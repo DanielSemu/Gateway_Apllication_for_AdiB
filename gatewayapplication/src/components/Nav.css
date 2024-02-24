@@ -1,0 +1,13 @@
+
+body{
+	
+	margin:0;
+	font-family:"Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+	padding-left:240px;
+}
+
+main{
+	position:relative;
+	height:100vh;
+	
+}

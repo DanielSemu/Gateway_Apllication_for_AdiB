@@ -1,0 +1,48 @@
+.aside{
+    position: fixed;
+    left: 0;
+    top: 8rem;
+    background: var(--back-ground-color);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    width: 230px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+.nav_logo{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+}
+.nav_list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    color: #ffff01;
+    font-size: 20px;
+}
+.nav_link{
+    color: hsl(245, 15%, 65%);
+    color: #ffff01;
+    font-weight: var(--font-bold);
+    transition: .3s;
+}
+.nav_link:hover{
+  color: hsl(245, 15%, 65%);
+}
+.copyright{
+    color: hsl(245, 15%, 65%);
+    font-size: var(--small-font-size);
+    transform: rotate(-180deg);
+    writing-mode: vertical-rl;
+}
+
+
+
+
+
+
+

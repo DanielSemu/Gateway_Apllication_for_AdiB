@@ -1,0 +1,56 @@
+.navbar{
+    background-color: var(--back-ground-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height:8rem;
+    z-index: 1;
+}
+.name h1{
+    font-size: 2.5rem;
+    color: #ffff01;
+}
+.logo{
+    padding: 5px;
+}
+.logo img{
+    border-radius: 50%;
+}
+.login button{
+    color: black;
+}
+@media(max-width:1280px){
+    .name h1{
+        font-size: 2rem;
+        
+    }
+    .logo img{
+        width: 70px;
+        border-radius: 50%;
+    }
+    .logo{
+        padding: 3px;
+    }
+    .login .btn{
+        padding: 5px 10px;
+    }
+}
+@media(max-width:720px){
+    .name h1{
+        display: none;
+    }
+    .logo img{
+        width: 60px;
+        border-radius: 50%;
+    }
+    .logo{
+        padding: 3px;
+    }
+    .login .btn{
+        padding: 7px 12px;
+    }
+}

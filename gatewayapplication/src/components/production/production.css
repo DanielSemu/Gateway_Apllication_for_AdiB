@@ -1,0 +1,78 @@
+.production{
+    margin-top: 6rem;
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    grid-gap: 20px; /* Gap between cards */
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+  }
+  
+ 
+.content{
+    width: 100%; /* Child width equal to parent width */
+    height: 100%; /* Child height equal to parent height */
+    position: relative;
+    background-color: var(--container-color);
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+   
+    padding-bottom: 40px;
+}
+.app_name{
+    margin: 1.25rem 0;
+    font-size: var(--h2-font-size);
+}
+.appdescription
+{
+margin-bottom: 1rem;
+}
+.content .btn{
+    margin-top: 1.25rem;
+    background-color: blue;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.app_image{
+    height: 100px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    object-fit: contain;
+    
+}
+.button{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.description{
+    margin-bottom: 10px;
+    
+}
+
+
+
+
+@media(max-width:1280px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Three columns with equal width */
+        grid-gap: 20px; /* Gap between cards */
+      }
+      
+}
+
+@media(max-width:900px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Three columns with equal width */
+        grid-gap: 20px; /* Gap between cards */
+      }
+}
