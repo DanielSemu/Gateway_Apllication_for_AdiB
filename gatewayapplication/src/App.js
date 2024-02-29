@@ -22,7 +22,8 @@ function App() {
        setApllications(data)
     }
     const production = apllications.filter(app => app.app_category === "Production");
-    const reporting = apllications.filter(app => app.app_category === "Reporting");
+    let reporting = apllications.filter(app => app.app_category === "Reporting");
+    // reporting=[]
     const communication = apllications.filter(app => app.app_category === "Communication");
     const others = apllications.filter(app => app.app_category === "Others");
     return (
@@ -31,11 +32,12 @@ function App() {
     <Navbar/>
     <L_Sidebar/>
     <main className='main'>
-    <Production applications={production}/>
-    <Reporting applications={reporting}/>
-    <Communication applications={communication}/>
-    <Others applications={others}/>
-   </main> 
+    {production && production.length > 0 && <Production applications={production} />}
+    {reporting && reporting.length > 0 && <Reporting applications={reporting} />}
+    {communication && communication.length > 0 && <Communication applications={communication} />}
+    {others && others.length > 0 && <Others applications={others} />}
+</main>
+
     </>
     
   );
