@@ -1,6 +1,6 @@
 import React from 'react'
 import '../production/production.css'
-
+import logo from '../../assets/logo1.png'
 const Communication = ({applications}) => {
   return (
     <section className="pricing section container" id='communication'>
@@ -12,7 +12,7 @@ const Communication = ({applications}) => {
           <div class="card">
               <div class="content">
                 <div className="description">
-                  <img src={item.image} alt="" className="app_image" />
+                  <img src={logo} alt="" className="app_image" />
                   <h3 className="app_name">{item.app_name}</h3>
                   <p className="appdescription">{item.description}</p>
                   </div>

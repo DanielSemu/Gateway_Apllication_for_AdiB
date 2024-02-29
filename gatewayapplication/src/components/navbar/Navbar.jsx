@@ -11,7 +11,7 @@ const Navbar = () => {
                 <h1>Addis International Bank S.c</h1>
         </div>
         <div className="login">
-                <button href="#" className="btn">Login</button>
+              <a href="http://127.0.0.1:8000/admin/login/?next=/admin/" className="btn">Login</a>
         </div>
     </nav>
    
