@@ -1,11 +1,11 @@
 .aside{
     position: fixed;
     left: 0;
-    top: 8rem;
+    top: 5.5rem;
     background: var(--back-ground-color);
     border-right: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 2.5rem;
-    width: 230px;
+    padding: 1.5rem;
+    width: 160px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,15 +14,15 @@
 }
 .nav_logo{
     color: #fff;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
 }
 .nav_list{
     display: flex;
     flex-direction: column;
-    row-gap: 2.5rem;
+    row-gap: 2rem;
     color: #ffff01;
-    font-size: 20px;
+    font-size: 16px;
 }
 .nav_link{
     color: hsl(245, 15%, 65%);
@@ -40,6 +40,31 @@
     writing-mode: vertical-rl;
 }
 
+@media(max-width:800px){
+    .aside{
+        width: 150px;
+        min-height: 100vh;
+        padding: 0.5rem; 
+    }
+    .nav_link{
+        color: #ffff01;
+        font-size: 16px;
+    }
+    .nav_list{
+        row-gap: 1.5rem;
+    }
+    .nav_logo{
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+@media(max-width:500px){
+    .aside{
+       display: none;
+    }
+    
+}
 
 
 

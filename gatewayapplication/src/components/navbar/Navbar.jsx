@@ -1,7 +1,58 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo1 from "../../assets/logo1.png"
 import './navbar.css'
 const Navbar = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  
+  const handleLoginClick = () => {
+    setShowPopup(true);
+  };
+
+  const handleCloseClick = () => {
+    setShowPopup(false);
+    setUsername('');
+    setPassword('');
+  };
+
+
+const handleLogin = async () => {
+    try {
+      await fetch('http://127.0.0.1:8000/api/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // body: JSON.stringify(note),
+      });
+    } catch (error) {
+      console.error('Error updating note:', error);
+    }
+    setShowPopup(false);
+      setUsername('');
+      setPassword('');
+  };
+  // const handleLogin = async (e) => {
+  //     e.preventDefault();
+
+  //     // try {
+  //         const response = await fetch.post('http://127.0.0.1:8000/api/login/', {
+  //             username,
+  //             password
+  //         });
+
+  //         console.log(response.data.message); // Login successful
+  //         // Redirect user or perform other actions upon successful login
+  //     // } catch (error) {
+  //     //   console.log("Error Occured");
+  //     // }
+  //     setShowPopup(false);
+  //     setUsername('');
+  //     setPassword('');
+  // };
+
   return (
     <nav className='navbar'>
         <div className="logo">
@@ -10,9 +61,48 @@ const Navbar = () => {
         <div className="name">
                 <h1>Addis International Bank S.c</h1>
         </div>
-        <div className="login">
-              <a href="http://127.0.0.1:8000/admin/login/?next=/admin/" className="btn">Login</a>
+        <div className="login-container">
+       <button className='login_button btn' onClick={handleLoginClick}>Login</button>
+      
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <span className="close" onClick={handleCloseClick}>&times;</span>
+            <h2 className='login_title'>Login</h2>
+            <form className='login_form' onSubmit={handleLogin}>
+             <div className="inputs">
+              <div className="username_container">
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder='Username...'
+                required
+              />
+             </div>
+             <div className="password_container">
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder='Password...'
+                required
+              />
+              </div>
+              </div>
+              <input className='btn submit' type="submit" value="Login" />
+            </form>
+          </div>
         </div>
+      )}
+    </div>
+        
     </nav>
    
  

@@ -5,66 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
-            grid-gap: 20px; /* Gap between cards */
-          }
-          
-          .card {
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-          }
-          
-          .content {
-            padding: 20px;
-          }
-          
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    .popup {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .popup-content {
+        background-color: #fefefe;
+        margin: 20% auto;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .close {
+        float: right;
+        cursor: pointer;
+    }
+    
+    .close:hover {
+        color: red;
+    }
+    
     </style>
 </head>
 <body>
-    <div class="card-container">
-        <div class="card">
-          <div class="content">
-            <h2>Card 1</h2>
-            <p>Content goes here...</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quae, nesciunt soluta, quod odit, itaque repellendus error deleniti sapiente vitae est nulla officia corporis suscipit a necessitatibus ipsum? Atque, vero?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quae, nesciunt soluta, quod odit, itaque repellendus error deleniti sapiente vitae est nulla officia corporis suscipit a necessitatibus ipsum? Atque, vero?</p>
-          </div>
+  <div class="container">
+    <button id="loginBtn">Login</button>
+    <div class="popup" id="loginPopup">
+        <div class="popup-content">
+            <span class="close" id="closeBtn">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login">
+            </form>
         </div>
-        <div class="card">
-          <div class="content">
-            <h2>Card 2</h2>
-            <p>Content goes here...</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="content">
-            <h2>Card 3</h2>
-            <p>Content goes here...</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="content">
-            <h2>Card 4</h2>
-            <p>Content goes here...</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi temporibus adipisci assumenda non iste doloremque commodi officia corporis tempore consequatur, maxime nostrum praesentium soluta natus eos excepturi molestias voluptatibus cum.</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="content">
-            <h2>Card 5</h2>
-            <p>Content goes here...</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="content">
-            <h2>Card 6</h2>
-            <p>Content goes here...</p>
-          </div>
-        </div>
-      </div>
-      
+    </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const loginBtn = document.getElementById('loginBtn');
+    const loginPopup = document.getElementById('loginPopup');
+    const closeBtn = document.getElementById('closeBtn');
+
+    loginBtn.addEventListener('click', function () {
+        loginPopup.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', function () {
+        loginPopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target === loginPopup) {
+            loginPopup.style.display = 'none';
+        }
+    });
+
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        // You can handle login functionality here, e.g., sending the data to a server
+        console.log('Username: ' + username + ', Password: ' + password);
+        loginPopup.style.display = 'none';
+    });
+});
+
+</script>
 </body>
 </html>

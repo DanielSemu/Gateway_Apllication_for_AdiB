@@ -1,9 +1,10 @@
 .production{
-    margin-top: 6rem;
+    margin-top: .1rem;
    
 }
 .section_title{
-    font-size: 26px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 .card-container {
     display: grid;
@@ -42,6 +43,8 @@ margin-bottom: 1rem;
     background-color: blue;
     cursor: pointer;
     margin-bottom: 10px;
+    padding: 7px 15px;
+    font-size: 14px;
 }
 .app_image{
     height: 100px;
@@ -64,16 +67,23 @@ margin-bottom: 1rem;
 
 
 
-@media(max-width:1280px){
+/* @media(max-width:1280px){
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 20px; 
+      }
+      
+} */
+
+@media(max-width:800px){
     .card-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Three columns with equal width */
         grid-gap: 20px; /* Gap between cards */
       }
-      
 }
-
-@media(max-width:900px){
+@media(max-width:500px){
     .card-container {
         display: grid;
         grid-template-columns: repeat(1, 1fr); /* Three columns with equal width */

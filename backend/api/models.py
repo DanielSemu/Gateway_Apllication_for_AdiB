@@ -1,9 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class App_Category(models.Model):
-    category=models.CharField(max_length=500)
-    
+    category=models.CharField(max_length=500)    
     def __str__(self):
         return self.category
 
@@ -16,3 +15,5 @@ class Applications(models.Model):
 
     def __str__(self):
         return self.app_name
+
+

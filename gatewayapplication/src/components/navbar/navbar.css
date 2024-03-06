@@ -7,22 +7,106 @@
     top: 0;
     left: 0;
     right: 0;
-    height:8rem;
+    height:5.5rem;
     z-index: 1;
 }
 .name h1{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #ffff01;
 }
 .logo{
     padding: 5px;
 }
 .logo img{
+    width: 60px;
     border-radius: 50%;
 }
-.login button{
-    color: black;
+.login_btn{
+    color: rgb(31, 26, 26);
+    padding: 7px 15px;
+    cursor: pointer;
 }
+
+.login-container {
+    text-align: center;
+  }
+  .login_button{
+    color: rgb(36, 35, 35);
+    padding: 7px 15px;
+  }
+  .popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+   
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 3;
+  }
+  
+  
+  .close {
+    float: right;
+    cursor: pointer;
+    font-size: 22px;
+  }
+  .login_title{
+    margin-bottom: 2rem;
+  }
+  .submit{
+    margin-top: 2rem;
+    color: #fff; 
+    background-color: blue;
+    cursor:pointer;
+  }
+  .inputs input{
+    /* border:  2px solid red; */
+   width: 100%;
+  }
+  .username_container{
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+  label{
+    margin-bottom: 0.75rem;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .username_container input,
+  .password_container input{
+    border-radius: 10px;
+    border: 1px solid rgb(55, 54, 54);
+    line-height: 2.5rem;
+  }
+ 
+  .password_container{
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+ 
+/* try */
+
+
 @media(max-width:1280px){
     .name h1{
         font-size: 2rem;

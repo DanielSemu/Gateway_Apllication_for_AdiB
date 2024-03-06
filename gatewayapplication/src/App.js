@@ -11,16 +11,20 @@ import Others from './components/others/Others';
 import React, { useState, useEffect } from 'react';
 function App() {
   let [apllications, setApllications]=useState([])
-
+try {
     useEffect(()=>{
         getApllications() 
     },[])
-
-    let getApllications = async ()=>{
+    
+      let getApllications = async ()=>{
        let response = await fetch('http://127.0.0.1:8000/api/applications/')
        let data = await response.json()
        setApllications(data)
     }
+    } catch (error) {
+      
+    }
+    
     const production = apllications.filter(app => app.app_category === "Production");
     let reporting = apllications.filter(app => app.app_category === "Reporting");
     // reporting=[]

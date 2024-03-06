@@ -81,16 +81,8 @@ img{
 
 
 .section{
-  padding-top: 7rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.section_title{
-  font-size: var(--h1-font-size);
-  margin-left: 0.875rem;
-  font-weight: var(--font-bold);
-  position: relative;
-  margin-bottom: 3.75rem;
 }
 
 .btn{
@@ -108,5 +100,23 @@ img{
 .main{
 	position:relative;
 	height:100vh;
-	
+	margin-left: 10rem;
+  margin-top: 6rem;
+  padding-top: 60px;
 }
+@media(max-width:800px){
+  .main{
+    
+    margin-left: 9.5rem;
+   
+  }
+}
+
+@media(max-width:500px){
+  .main{
+    
+    margin-left: 1.5rem;
+   
+  }
+}
+
