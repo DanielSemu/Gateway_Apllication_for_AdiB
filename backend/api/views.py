@@ -11,6 +11,9 @@ from django.contrib.auth import authenticate, login
 
 
 
+
+
+
 @api_view(["GET", "POST"])
 def getApplications(request):
     if request.method =='GET':
@@ -24,7 +27,6 @@ def LoginView(request):
     if request.method =='POST':
         username = request.data.get('username')
         password = request.data.get('password')
-
         user = authenticate(request, username=username, password=password)
         
         if user is not None:
@@ -33,6 +35,6 @@ def LoginView(request):
             return Response({'message': 'Login successful'}, status=status.HTTP_200_OK)
         else:
             print("Invalid Login ")
-            return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({'message': 'Login failed'}, status=status.HTTP_401_UNAUTHORIZED)
 
     

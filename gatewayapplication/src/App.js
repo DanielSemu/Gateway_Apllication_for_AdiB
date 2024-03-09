@@ -7,10 +7,11 @@ import Production from './components/production/Production';
 import Reporting from './components/reporting/Reporting';
 import Communication from './components/communication/Communication';
 import Others from './components/others/Others';
-
-import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect, useRef} from 'react';
 function App() {
   let [apllications, setApllications]=useState([])
+  const myRef = useRef(); 
 try {
     useEffect(()=>{
         getApllications() 
@@ -36,10 +37,16 @@ try {
     <Navbar/>
     <L_Sidebar/>
     <main className='main'>
+        <Routes>
+        <Route
+        path="/production1"
+        element={production && production.length > 0 && <Production applications={production} />}
+                    />
     {production && production.length > 0 && <Production applications={production} />}
     {reporting && reporting.length > 0 && <Reporting applications={reporting} />}
     {communication && communication.length > 0 && <Communication applications={communication} />}
-    {others && others.length > 0 && <Others applications={others} />}
+    {others && others.length > 0 && <Others applications={others} />} 
+    </Routes>
 </main>
 
     </>

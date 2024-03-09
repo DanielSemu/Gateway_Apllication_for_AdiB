@@ -18,40 +18,40 @@ const Navbar = () => {
   };
 
 
-const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const data = {
+        username: username,
+        password: password
+    };
+
     try {
-      await fetch('http://127.0.0.1:8000/api/login/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        // body: JSON.stringify(note),
-      });
+        const response = await fetch('http://127.0.0.1:8000/api/login/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        if (response.ok) {
+            console.log('Login successful');
+            // alert('Login successful');
+            
+            // Handle successful login, e.g., redirect to a new page
+        } else {
+          console.log('Login Failed');
+          setError('Invalid username or password')
+        }
+        
     } catch (error) {
-      console.error('Error updating note:', error);
+        console.error('Error updating note:', error);
     }
     setShowPopup(false);
-      setUsername('');
-      setPassword('');
-  };
-  // const handleLogin = async (e) => {
-  //     e.preventDefault();
+    setUsername('');
+    setPassword('');
+};
 
-  //     // try {
-  //         const response = await fetch.post('http://127.0.0.1:8000/api/login/', {
-  //             username,
-  //             password
-  //         });
-
-  //         console.log(response.data.message); // Login successful
-  //         // Redirect user or perform other actions upon successful login
-  //     // } catch (error) {
-  //     //   console.log("Error Occured");
-  //     // }
-  //     setShowPopup(false);
-  //     setUsername('');
-  //     setPassword('');
-  // };
+  
 
   return (
     <nav className='navbar'>

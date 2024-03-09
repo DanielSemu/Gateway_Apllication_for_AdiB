@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 import './lsidebar.css'
 const L_Sidebar = () => {
   return (
@@ -14,9 +14,10 @@ const L_Sidebar = () => {
      <br/>
         <ul className="nav_list">
           <li className="nav_item">
-            <a href="#production" className="nav_link">
-                Production
-            </a>
+            
+            <Link to="/production1" className="nav_link">
+                        Production
+            </Link>
           </li>
           <li className="nav_item">
             <a href="#reporting" className="nav_link">

@@ -6,12 +6,12 @@ const Production = ({applications}) => {
 
     <section className="production section container" id='production'>
       <h2 className="section_title">Production Applications</h2>
-      <div class="card-container">
+      <div className="card-container">
         {
           applications.map((item)=>{
             return(
-          <div class="card">
-              <div class="content">
+          <div key={item.id} className="card">
+              <div className="content">
                 <div className="description">
                   <img src={'http://127.0.0.1:8000/' + item.image} alt="reporting application" className="app_image" 
                   />
