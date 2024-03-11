@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
 import logo1 from "../../assets/logo1.png"
 import './navbar.css'
+import { useNavigate } from 'react-router-dom';
+
 const Navbar = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  
+  const [isLoggedin, setLoggin] = useState(false)
+  // const [error, setError] = useState('');
+  const navigate = useNavigate();
   const handleLoginClick = () => {
     setShowPopup(true);
   };
@@ -34,13 +37,16 @@ const Navbar = () => {
             body: JSON.stringify(data),
         });
         if (response.ok) {
+            setLoggin(true)
             console.log('Login successful');
+            navigate('/dashboard');
             // alert('Login successful');
             
             // Handle successful login, e.g., redirect to a new page
         } else {
           console.log('Login Failed');
-          setError('Invalid username or password')
+          alert("Login Failed, Password or username is Incorrect")
+         
         }
         
     } catch (error) {
@@ -50,6 +56,10 @@ const Navbar = () => {
     setUsername('');
     setPassword('');
 };
+const handlelogout=()=>{
+  setLoggin(false)
+  navigate('/');
+}
 
   
 
@@ -62,7 +72,10 @@ const Navbar = () => {
                 <h1>Addis International Bank S.c</h1>
         </div>
         <div className="login-container">
-       <button className='login_button btn' onClick={handleLoginClick}>Login</button>
+          {isLoggedin ?
+          <button className='login_button btn' onClick={handlelogout} >Logout</button>:<button className='login_button btn' onClick={handleLoginClick}>Sign in</button>
+        }
+       
       
       {showPopup && (
         <div className="popup">

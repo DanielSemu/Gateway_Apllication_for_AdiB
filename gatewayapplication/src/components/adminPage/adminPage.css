@@ -1,0 +1,36 @@
+.admin_page{
+    margin-top: 100px;
+    margin-left: 50px;
+    
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;}
+.edit{
+    background-color: rgb(4, 170, 109);
+    padding:5px 10px;
+}
+.delete{
+    padding:5px 10px;
+    background-color: rgb(244, 67, 54);
+    margin-left: 5px;
+}
+.operation{
+    display: flex;
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+}
+.add_new{
+    background-color: rgb(4, 170, 109);
+    padding: 5px 10px;
+}
